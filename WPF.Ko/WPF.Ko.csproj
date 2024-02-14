@@ -8,4 +8,13 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\WPF.Ko.Common\WPF.Ko.Common\WPF.Ko.Common.csproj" />
+    <ProjectReference Include="..\WPF.Ko.Frontend\WPF.Ko.Infrastructure\WPF.Ko.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Views\Main\" />
+  </ItemGroup>
+
 </Project>

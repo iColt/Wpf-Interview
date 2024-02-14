@@ -3,10 +3,47 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WPF.Ko"
+        xmlns:local="clr-namespace:WPF.Ko" 
+        xmlns:infra="clr-namespace:WPF.Ko.Infrastructure.DataTemplateSelectors;assembly=WPF.Ko.Infrastructure"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="14" />
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="FontSize" Value="14" />
+        </Style>
+        <DataTemplate x:Key="whiskyTypeTemplate">
+            <StackPanel Margin="5">
+                <TextBlock FontSize="18" Foreground="Brown" Text="{Binding Path=Id}" />
+                <TextBlock Foreground="Brown" Text="{Binding Path=AveragePrice}" />
+            </StackPanel>
+        </DataTemplate>
+        <DataTemplate x:Key="alcoholTypeTemplate">
+            <StackPanel Margin="5">
+                <TextBlock FontSize="18" Text="{Binding Path=Id}" />
+                <TextBlock Text="{Binding Path=AveragePrice}" />
+            </StackPanel>
+        </DataTemplate>
+        <infra:AlcoholTypeDTSelector x:Key="AlcoholTypeDTSelector"/>
+    </Window.Resources>
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="0.8*" />
+        </Grid.ColumnDefinitions>
 
+        <ListBox Grid.Column="0" ItemsSource="{Binding Alcohols}"
+                 SelectedItem="{Binding SelectedAlcohol}" ItemTemplateSelector="{StaticResource AlcoholTypeDTSelector}">
+        </ListBox>
+
+        <StackPanel Grid.Column="1" DataContext="{Binding SelectedAlcohol}">
+            <TextBlock Text="Id"  />
+            <TextBlock Text="Average price" />
+            <TextBox Text="{Binding Id, UpdateSourceTrigger=PropertyChanged}" />
+            <TextBlock Text="Цена" />
+            <TextBox Text="{Binding AveragePrice, UpdateSourceTrigger=PropertyChanged}" />
+        </StackPanel>
     </Grid>
 </Window>

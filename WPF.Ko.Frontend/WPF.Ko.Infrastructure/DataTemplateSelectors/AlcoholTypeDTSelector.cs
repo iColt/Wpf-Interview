@@ -1,23 +1,23 @@
-﻿using System;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
+using WPF.Ko.Common.Models;
+
+namespace WPF.Ko.Infrastructure.DataTemplateSelectors;
 
 public class AlcoholTypeDTSelector : DataTemplateSelector
 {
     public override DataTemplate SelectTemplate(object item, DependencyObject container)
     {
-        FrameworkElement element = container as FrameworkElement;
+        FrameworkElement element = (FrameworkElement)container;
 
-        if (element != null && item != null && item is Alcohol)
+        if (element != null && item != null && item is Alcohol alcohol)
         {
-            Task taskitem = item as Alcohol;
-
-            if (taskitem.Type == 1)
+            if (alcohol?.Type.Id == 2)
                 return
-                    element.FindResource("importantTaskTemplate") as DataTemplate;
+                    element.FindResource("whiskyTypeTemplate") as DataTemplate;
             else
                 return
-                    element.FindResource("myTaskTemplate") as DataTemplate;
+                    element.FindResource("alcoholTypeTemplate") as DataTemplate;
         }
 
         return null;

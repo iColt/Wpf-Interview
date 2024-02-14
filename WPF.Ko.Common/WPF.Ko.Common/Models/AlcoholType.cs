@@ -24,4 +24,10 @@ public class AlcoholType
     }
 
     public static AlcoholType EmptyAlcoholType => new AlcoholType { Id = 1, Code = "Empty" };
+
+    public static AlcoholType WhiskyType => new AlcoholType { Id = 2, Code = "WHY" };
+
+    public static AlcoholType WhiskeyType => new AlcoholType { Id = 3, Code = "WHEY" };
+
+    public static AlcoholType CognacType => new AlcoholType { Id = 3, Code = "CGN" };
 }

@@ -1,8 +1,13 @@
-﻿namespace WPF.Ko.Common.Models;
+﻿using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
-public class Alcohol
+namespace WPF.Ko.Common.Models;
+
+public class Alcohol : INotifyPropertyChanged
 {
     private int _id;
+    private decimal _averagePrice;
+    private AlcoholType _type = AlcoholType.EmptyAlcoholType;
 
     public int Id
     {
@@ -10,7 +15,6 @@ public class Alcohol
         set { _id = value; }
     }
 
-    private AlcoholType _type = AlcoholType.EmptyAlcoholType;
 
     public AlcoholType Type
     {
@@ -19,8 +23,22 @@ public class Alcohol
     }
 
 
+    public decimal AveragePrice
+    {
+        get { return _averagePrice; }
+        set { _averagePrice = value; }
+    }
+
+
     public Alcohol()
     {
 
+    }
+
+    public event PropertyChangedEventHandler PropertyChanged;
+    public void OnPropertyChanged([CallerMemberName] string prop = "")
+    {
+        if (PropertyChanged != null)
+            PropertyChanged(this, new PropertyChangedEventArgs(prop));
     }
 }

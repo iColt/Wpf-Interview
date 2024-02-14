@@ -7,4 +7,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\WPF.Ko.Common\WPF.Ko.Common\WPF.Ko.Common.csproj" />
+  </ItemGroup>
+
 </Project>
