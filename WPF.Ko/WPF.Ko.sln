@@ -11,6 +11,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPF.Ko.Infrastructure", "..\WPF.Ko.Frontend\WPF.Ko.Infrastructure\WPF.Ko.Infrastructure.csproj", "{F8C6E897-4DC6-4CC0-AC6C-7F470C221DB4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF.Ko.ResourceLibrary", "..\WPF.Ko.Frontend\WPF.Ko.ResourceLibrary\WPF.Ko.ResourceLibrary.csproj", "{26D7A9CE-A8E1-4067-BD8D-DD815191C619}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,12 +31,17 @@ Global
 		{F8C6E897-4DC6-4CC0-AC6C-7F470C221DB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F8C6E897-4DC6-4CC0-AC6C-7F470C221DB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F8C6E897-4DC6-4CC0-AC6C-7F470C221DB4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26D7A9CE-A8E1-4067-BD8D-DD815191C619}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26D7A9CE-A8E1-4067-BD8D-DD815191C619}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26D7A9CE-A8E1-4067-BD8D-DD815191C619}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26D7A9CE-A8E1-4067-BD8D-DD815191C619}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{F8C6E897-4DC6-4CC0-AC6C-7F470C221DB4} = {D27882B8-EE46-4210-A649-F0084080888C}
+		{26D7A9CE-A8E1-4067-BD8D-DD815191C619} = {D27882B8-EE46-4210-A649-F0084080888C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9FE757CB-C43B-4675-9524-EC596FAA75A7}

@@ -11,6 +11,7 @@
   <ItemGroup>
     <ProjectReference Include="..\WPF.Ko.Common\WPF.Ko.Common\WPF.Ko.Common.csproj" />
     <ProjectReference Include="..\WPF.Ko.Frontend\WPF.Ko.Infrastructure\WPF.Ko.Infrastructure.csproj" />
+    <ProjectReference Include="..\WPF.Ko.Frontend\WPF.Ko.ResourceLibrary\WPF.Ko.ResourceLibrary.csproj" />
   </ItemGroup>
 
   <ItemGroup>
