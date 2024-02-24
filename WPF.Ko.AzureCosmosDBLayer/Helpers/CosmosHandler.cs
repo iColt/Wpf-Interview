@@ -16,7 +16,7 @@ public static class CosmosHandler
        );
     }
 
-    private static async Task<Container> GetContainer()
+    private static async Task<Container> GetContainerAsync()
     {
         //TODO: read DB name from file
         Database database = _client.GetDatabase("DB-NAME");
@@ -37,7 +37,21 @@ public static class CosmosHandler
 
     public static async Task ManageCustomerAsync(string name, string email, string state, string country)
     {
-        //TODO: write to output
-        //await Console.Out.WriteLineAsync($"Hello {name} of {state}, {country}!");
+        Container container = await GetContainerAsync();
+        string id = name.Kebaberize();
+        var customer = new
+        {
+            id = id,
+            name = name,
+            address = new
+            {
+                state = state,
+                country = country
+            }
+        };
+
+        var response = await container.CreateItemAsync(customer);
+
+        //Console.WriteLine($"[{response.StatusCode}]\t{id}\t{response.RequestCharge} RUs");
     }
 }
